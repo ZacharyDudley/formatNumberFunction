@@ -1,0 +1,11 @@
+{
+  "name": "utility",
+  "version": "1.0.0",
+  "main": "utility.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
