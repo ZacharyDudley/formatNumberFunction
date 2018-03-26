@@ -1,10 +1,25 @@
 const formatNumber = require('./formatNumber');
 
 describe('formatNumber function', () => {
+  expect.extend({
+    isTypeString(received) {
+      const pass = typeof received === 'string'
+      if (pass) {
+        return {
+          message: () => `${received} is a string`,
+          pass: true
+        };
+      } else {
+        return {
+          message: () => `${received} is not a string`,
+          pass: false
+        };
+      }
+    }
+  });
 
   test('accepts number and returns string of number', () => {
-    expect(formatNumber(3.14)).toBe('3.14');
-    expect(formatNumber(3.14)).not.toBe(3.14);
+    expect(formatNumber(3.14)).isTypeString();
   });
 
   test('defaults 4 decimal places', () => {
